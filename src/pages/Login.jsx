@@ -10,7 +10,7 @@ export default function Login() {
    const handleSubmit=()=>{
       console.log(username)
       setError("")
-      axios.post('http://127.0.0.1:4000/admin/login',{username:username,password:password},{'Access-Control-Allow-Origin':'*'})
+      axios.post('http://serve-android.herokuapp.com/admin/login',{username:username,password:password},{ mode: 'cors'},)
       .then((res)=>{
          localStorage.setItem('token',res.data.token)
          navigate("/home")
