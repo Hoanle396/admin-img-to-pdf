@@ -24,7 +24,7 @@ export default function Feedback() {
     ];
     useEffect(()=>{
        setIsLoaded(true)
-       axios.get('http://serve-android.herokuapp.com/admin/user')
+       axios.get('https://serve-android.herokuapp.com/admin/user')
        .then(res=>{
           setRow(res.data)
        })
