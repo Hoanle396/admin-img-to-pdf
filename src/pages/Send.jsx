@@ -1,6 +1,5 @@
 import React ,{useState} from 'react'
 import{Grid,Card, Input, Spacer,Button,Text} from '@nextui-org/react'
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 export default function Send() {
    const [title,setTitle]=useState()
@@ -8,7 +7,6 @@ export default function Send() {
    const [error,setError]=useState("")
    const [res,setRes]=useState("")
    const handleSubmit=()=>{
-      console.log(username)
       setError("")
       setRes("")
       axios.post('https://serve-android.herokuapp.com/feedback/send',{title:title,body:body},{headers:{'Access-Control-Allow-Origin':'*','Content-Type':'application/json'}})
@@ -24,7 +22,7 @@ export default function Send() {
       <Grid xs={4}>
         
       <Card css={{ mw: "400px" , marginTop:"100px" }}>
-      <Text gap={4} justify="center" color="primary">Login</Text>
+      <Text gap={4} justify="center" color="primary">Send Notification</Text>
        <Spacer y={2}/>
        <Text color="red">{error}</Text>
        <Text color="success">{res}</Text>
