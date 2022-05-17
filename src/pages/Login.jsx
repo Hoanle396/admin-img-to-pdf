@@ -30,7 +30,7 @@ export default function Login() {
        <Spacer y={2}/>
       <Input clearable bordered labelPlaceholder="User name" value={username} onChange={(e)=>{setUsername(e.target.value)}} />
       <Spacer y={2.5} />
-      <Input clearable bordered labelPlaceholder="Pass word" value={password} onChange={(e)=>{setPassword(e.target.value)}} />
+      <Input.Password clearable bordered labelPlaceholder="Pass word" value={password} onChange={(e)=>{setPassword(e.target.value)}} />
       <Spacer y={2.5} />
       <Button color="gradient" auto onClick={handleSubmit}>
           Login
