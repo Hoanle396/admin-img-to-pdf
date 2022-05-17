@@ -6,14 +6,19 @@ import 'bootstrap'
 import { NextUIProvider } from '@nextui-org/react';
 import { BrowserRouter ,Route,Routes} from 'react-router-dom';
 import Login from './pages/Login';
+import Feedback from './pages/Feedback';
+import Navbar from './components/Navbar';
+import User from './pages/User';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <NextUIProvider>
      <BrowserRouter>
+<Navbar/>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="login" element={<Login />} />
-      {/* <Route path="invoices" element={<Invoices />} /> */}
+      <Route path="feedback" element={<Feedback />} />
+      <Route path="user" element={<User />} />
     </Routes>
   </BrowserRouter>
   </NextUIProvider>

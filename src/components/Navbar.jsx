@@ -1,28 +1,32 @@
 import React from 'react'
-
+import { useNavigate } from "react-router-dom";
 export default function Navbar() {
+   const nav = useNavigate()
+   const logout = ()=>{
+      localStorage.removeItem('token');
+      nav("login")
+   }
    return (
-      <nav class="navbar navbar-light bg-light">
-         <a class="navbar-brand" href="#">
-            <img src="../logo.svg" width="30" height="30" class="d-inline-block align-top" alt="" />
+      <nav className="navbar navbar-light bg-light">
+         <a className="navbar-brand" href="">
             Admin Dashboard
          </a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
          </button>
-         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-               <li class="nav-item active">
-                  <a class="nav-link" href="#">Home </a>
+         <div className="collapse navbar-lg navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+               <li className="nav-item active">
+                  <a className="nav-link" href="">Home </a>
                </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#">User</a>
+               <li className="nav-item">
+                  <a className="nav-link" onClick={()=>nav('user')}>User</a>
                </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#">FeedBack</a>
+               <li className="nav-item">
+                  <a className="nav-link" onClick={()=>nav('feedback')}>FeedBack</a>
                </li>
-               <li class="nav-item">
-                  <a class="nav-link " href="#">Logout</a>
+               <li className="nav-item">
+                  <a className="nav-link " onClick={logout}>Logout</a>
                </li>
             </ul>
          </div>

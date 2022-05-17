@@ -1,19 +1,18 @@
 import React from 'react';
-import{Link}from 'react-router-dom'
+import{Grid,Card, } from '@nextui-org/react'
+import Navbar from './components/Navbar';
 function App() {
   return (
     <div>
-    <h1>Bookkeeper</h1>
-    <nav
-      style={{
-        borderBottom: "solid 1px",
-        paddingBottom: "1rem",
-      }}
-    >
-      <Link to="/invoices">Invoices</Link> |{" "}
-      <Link to="/expenses">Expenses</Link>
-    </nav>
-  </div>
+     <Grid.Container gap={2}  justify="center">
+      <Grid xs={4}>
+      <Card css={{ mw: "400px" , marginTop:"100px" }}>
+         Admin Dashboard
+      </Card>
+      </Grid>
+   
+    </Grid.Container>
+    </div>
   );
 }
 
