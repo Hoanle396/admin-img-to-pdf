@@ -26,6 +26,9 @@ export default function Navbar() {
                   <a className="nav-link" onClick={()=>nav('feedback')}>FeedBack</a>
                </li>
                <li className="nav-item">
+                  <a className="nav-link" onClick={()=>nav('/send')}>Send Notification</a>
+               </li>
+               <li className="nav-item">
                   <a className="nav-link " onClick={logout}>Logout</a>
                </li>
             </ul>
