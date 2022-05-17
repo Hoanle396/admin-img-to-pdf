@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Feedback from './pages/Feedback';
 import Navbar from './components/Navbar';
 import User from './pages/User';
+import Send from './pages/Send';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <NextUIProvider>
@@ -19,6 +20,7 @@ root.render(
       <Route path="login" element={<Login />} />
       <Route path="feedback" element={<Feedback />} />
       <Route path="user" element={<User />} />
+      <Route path="send" element={<Send />} />
     </Routes>
   </BrowserRouter>
   </NextUIProvider>
